@@ -41,12 +41,12 @@
             name = name.toUpperCase(); // convert names to upper case
             total = getNumerology(name);
             if (total == desiredNumber) { // does total equal numerology value required?
-                $("<strong>" + name + "</strong> = " + total + "<br>").appendTo(container); // output matching numerology names
+                $("<li><strong>" + name + "</strong> = " + total + "</li>").appendTo(container); // output matching numerology names
             }
         });
     };
 
     $(function () {
-        Numerology(firstNames, 22, '.boo');
+        Numerology(firstNames, 22, '.name-list');
     });
 })();
