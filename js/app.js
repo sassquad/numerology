@@ -35,6 +35,9 @@
             }
             return total;
         };
+        
+        $(container).empty();
+        $(".error").show();
 
         // loop through each word
         firstNames.forEach(function (name, index) {
@@ -42,11 +45,15 @@
             total = getNumerology(name);
             if (total == desiredNumber) { // does total equal numerology value required?
                 $("<li><strong>" + name + "</strong> = " + total + "</li>").appendTo(container); // output matching numerology names
-            }
+        $(".error").hide();
+            } 
         });
+        
     };
 
     $(function () {
-        Numerology(firstNames, 22, '.name-list');
+        $("#btnSubmit").click(function() {
+            Numerology(firstNames, $("#yourNumber").val(), '.name-list');
+        })
     });
 })();
