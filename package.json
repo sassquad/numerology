@@ -1,0 +1,23 @@
+{
+  "name": "numerology-calculator",
+  "version": "2.0.0",
+  "description": "A numerology calculator based on Indian Astrology principles",
+  "type": "module",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "node tests/numerology-core.test.js",
+    "start": "python3 -m http.server 8000 || python -m SimpleHTTPServer 8000",
+    "serve": "npm run start"
+  },
+  "keywords": [
+    "numerology",
+    "calculator",
+    "indian-astrology",
+    "names",
+    "vanilla-js"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}

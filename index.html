@@ -1,17 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
-  <title>Numerological Name Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate the numerological value of names based on Indian Astrology. Find names that match your desired numerological number.">
+    <meta name="keywords" content="numerology, name calculator, Indian astrology, numerological value">
+    <meta name="author" content="Numerology Calculator">
+
+    <!-- Open Graph meta tags for social sharing -->
+    <meta property="og:title" content="Numerology Name Calculator">
+    <meta property="og:description" content="Calculate the numerological value of names based on Indian Astrology">
+    <meta property="og:type" content="website">
+
+    <title>Numerology Name Calculator - Find Your Perfect Name</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Favicon (optional - can be added later) -->
+    <!-- <link rel="icon" type="image/png" href="favicon.png"> -->
 </head>
 <body>
-  <h1>Your ideal numerological name</h1>
-  <ul class="name-list">
-  </ul>
-  <p class="error">No matching names</p>
-  <input type="number" name="yourNumber" id="yourNumber" placeholder="Your ideal number">
-  <input type="submit" name="btnSubmit" id="btnSubmit" value="Go">
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Numerology Name Calculator</h1>
+            <p class="subtitle">
+                Discover names based on their numerological value using Indian Astrology principles
+            </p>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Controls Section -->
+            <section class="controls" aria-label="Search and calculation controls">
+                <!-- Search by Number -->
+                <div class="control-group">
+                    <h2>Search by Number</h2>
+                    <div class="input-group">
+                        <label for="yourNumber" class="sr-only">Enter your desired numerological number</label>
+                        <input
+                            type="number"
+                            name="yourNumber"
+                            id="yourNumber"
+                            placeholder="Enter number (e.g., 22)"
+                            aria-label="Desired numerological number"
+                            min="1"
+                            max="200"
+                            autocomplete="off"
+                        >
+                        <button
+                            type="button"
+                            id="btnSearch"
+                            class="btn-primary"
+                            aria-label="Search for names with this number"
+                        >
+                            Search
+                        </button>
+                    </div>
+                    <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--text-secondary);">
+                        Find names that match your desired numerological value
+                    </p>
+                </div>
+
+                <!-- Calculate Custom Name -->
+                <div class="control-group">
+                    <h2>Calculate Any Name</h2>
+                    <div class="input-group">
+                        <label for="customName" class="sr-only">Enter a name to calculate</label>
+                        <input
+                            type="text"
+                            name="customName"
+                            id="customName"
+                            placeholder="Enter any name"
+                            aria-label="Name to calculate numerological value"
+                            autocomplete="off"
+                        >
+                        <button
+                            type="button"
+                            id="btnCalculateCustom"
+                            class="btn-secondary"
+                            aria-label="Calculate numerological value of this name"
+                        >
+                            Calculate
+                        </button>
+                    </div>
+                    <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--text-secondary);">
+                        See the breakdown of how each letter contributes to the total
+                    </p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button
+                        type="button"
+                        id="btnShowAll"
+                        class="btn-outline"
+                        aria-label="Show all names in database"
+                    >
+                        Show All Names
+                    </button>
+                    <button
+                        type="button"
+                        id="btnShowStats"
+                        class="btn-outline"
+                        aria-label="Show statistics about name distribution"
+                    >
+                        Show Statistics
+                    </button>
+                </div>
+            </section>
+
+            <!-- Error Messages -->
+            <div
+                class="error"
+                role="alert"
+                aria-live="polite"
+            ></div>
+
+            <!-- Results Section -->
+            <section class="results-section" aria-label="Search results">
+                <!-- Result Count -->
+                <div
+                    class="result-count"
+                    role="status"
+                    aria-live="polite"
+                ></div>
+
+                <!-- Breakdown Container -->
+                <div
+                    class="breakdown-container"
+                    role="region"
+                    aria-label="Name breakdown"
+                ></div>
+
+                <!-- Name List -->
+                <ul
+                    class="name-list"
+                    aria-label="List of names"
+                ></ul>
+
+                <!-- Statistics Container -->
+                <div
+                    class="stats-container"
+                    role="region"
+                    aria-label="Statistics"
+                ></div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); font-size: 0.875rem;">
+            <p>
+                <strong>About Numerology:</strong> This calculator is based on Indian Astrology numerology principles.
+                Numerology is used for informational and entertainment purposes only.
+            </p>
+            <p style="margin-top: 0.5rem;">
+                Master numbers (11, 22, 33) are considered to have special significance in numerology.
+            </p>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+
+    <!-- No jQuery needed! Pure vanilla JavaScript -->
 </body>
 </html>
